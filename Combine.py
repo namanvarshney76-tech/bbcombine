@@ -895,7 +895,7 @@ Gmail Drive Folder: 1l5L9IdQ8WcV6AZ04JCeuyxvbNkLPJnHt
                 
                 st.markdown("**Excel Configuration:**")
                 st.code("""
-Excel Source Folder: 1FxYWfDoe29xSif3xJj1NNvEYHxTRLiM9
+Excel Source Folder: 1gXThnmKaZTp6gvpIBAMrpJr-liA4reOt
 Target Spreadsheet: 170WUaPhkuxCezywEqZXJtHRw3my3rpjB9lJOvfLTeKM
 Sheet Name: bbalertgrn
 Duplicate Removal: Based on Item Code + po_number
@@ -910,7 +910,7 @@ Gmail Drive Folder: 1l5L9IdQ8WcV6AZ04JCeuyxvbNkLPJnHt
                 
                 st.markdown("**Excel Configuration:**")
                 st.code("""
-Excel Source Folder: 1mMg7tDkgQTQ3oxG9xJoa4gQ-DzT9R-pn
+Excel Source Folder: 1238YDcKRFas2mgoJuswCE-qH8v5JVoXd
 Target Spreadsheet: 170WUaPhkuxCezywEqZXJtHRw3my3rpjB9lJOvfLTeKM
 Sheet Name: bbalertgrn_2
 Duplicate Removal: Based on InvoiceNo + SKU Code
@@ -954,7 +954,7 @@ Duplicate Removal: Based on InvoiceNo + SKU Code
         }
         
         excel_config = {
-            'excel_folder_id': '1FxYWfDoe29xSif3xJj1NNvEYHxTRLiM9',
+            'excel_folder_id': '1gXThnmKaZTp6gvpIBAMrpJr-liA4reOt',
             'spreadsheet_id': '170WUaPhkuxCezywEqZXJtHRw3my3rpjB9lJOvfLTeKM',
             'sheet_name': 'bbalertgrn',
             'header_row': header_row,
@@ -971,7 +971,7 @@ Duplicate Removal: Based on InvoiceNo + SKU Code
         }
         
         excel_config = {
-            'excel_folder_id': '1mMg7tDkgQTQ3oxG9xJoa4gQ-DzT9R-pn',
+            'excel_folder_id': '1238YDcKRFas2mgoJuswCE-qH8v5JVoXd',
             'spreadsheet_id': '170WUaPhkuxCezywEqZXJtHRw3my3rpjB9lJOvfLTeKM',
             'sheet_name': 'bbalertgrn_2',
             'header_row': header_row,
@@ -1147,6 +1147,7 @@ def main():
 if __name__ == "__main__":
 
     main()
+
 
 
 
