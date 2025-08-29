@@ -351,20 +351,24 @@ class BigBasketAutomation:
         if 'logs' not in st.session_state:
             st.session_state.logs = []
         
+        # Initialize log counter if it doesn't exist
+        if 'log_counter' not in st.session_state:
+            st.session_state.log_counter = 0
+        
         log_entry = f"[{timestamp}] {message}"
         st.session_state.logs.append(log_entry)
+        st.session_state.log_counter += 1
         
         # Keep only last 100 log entries
         if len(st.session_state.logs) > 100:
             st.session_state.logs = st.session_state.logs[-100:]
         
-        # Update log display - use a unique key with timestamp
-        unique_key = f"log_display_{timestamp.replace(':', '')}"
+        # Update log display with unique key based on counter
         log_container.text_area(
             "Activity Log",
             value='\n'.join(st.session_state.logs[-20:]),  # Show last 20 entries
             height=300,
-            key=unique_key  # Unique key based on timestamp
+            key=f"log_display_{st.session_state.log_counter}"  # Unique key based on counter
         )
     
     def _get_email_details(self, message_id: str) -> Dict:
@@ -916,20 +920,26 @@ Duplicate Removal: Based on InvoiceNo + SKU Code
         st.markdown("### 📊 Live Activity Log")
         log_container = st.empty()
         
+        # Initialize log counter if it doesn't exist
+        if 'log_counter' not in st.session_state:
+            st.session_state.log_counter = 0
+        
         # Initialize log display with unique key
         if st.session_state.logs:
+            st.session_state.log_counter += 1
             log_container.text_area(
                 "Activity Log",
                 value='\n'.join(st.session_state.logs[-20:]),
                 height=300,
-                key=f"log_init_{datetime.now().strftime('%H%M%S')}"
+                key=f"log_init_{st.session_state.log_counter}"
             )
         else:
+            st.session_state.log_counter += 1
             log_container.text_area(
                 "Activity Log",
                 value="[Ready] Waiting for workflow to start...",
                 height=300,
-                key=f"log_empty_{datetime.now().strftime('%H%M%S')}"
+                key=f"log_empty_{st.session_state.log_counter}"
             )
     
     # Configuration based on source
@@ -1137,5 +1147,6 @@ def main():
 if __name__ == "__main__":
 
     main()
+
 
 
